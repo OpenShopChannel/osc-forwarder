@@ -31,6 +31,7 @@
  * 3. This notice may not be removed or altered from any source
  * distribution.
  ***************************************************************************/
+ 
 #include <gccore.h>
 #include <malloc.h>
 #include <stdio.h>
@@ -62,6 +63,10 @@ int main(int argc, char *argv[])
 	void *xfb = NULL;
 	GXRModeObj *rmode = NULL;
 
+	/*
+	* Initialize video subsystem
+	*/
+
 	VIDEO_Init();
 	rmode = VIDEO_GetPreferredMode(NULL);
 	xfb = MEM_K0_TO_K1(SYS_AllocateFramebuffer(rmode));
@@ -72,12 +77,26 @@ int main(int argc, char *argv[])
 	VIDEO_WaitVSync();
 	if(rmode->viTVMode&VI_NON_INTERLACE) 
 		VIDEO_WaitVSync();
+
+	/*
+	* Attempt to initialize FAT filesystem (SD card) support, launch Wii Shop
+	* with error code in case of failure.
+	*/
 	
 	if (!fatInitDefault()) {
 		WII_LaunchTitleWithArgs(0x0001000248414241L, 0, "/error?error=FAT_INIT_FAILED", NULL);
 	}
 
+	/*
+	* Initialize Wii remote subsystem
+	*/
+
 	WPAD_Init();
+
+	/*
+	* Attempt to open & create file handler for target DOL, launch Wii Shop with
+	* error code in case of failure.
+	*/
 
 	exeFile = fopen("/apps/oscdownload/boot.dol","rb");
 
@@ -86,6 +105,11 @@ int main(int argc, char *argv[])
 		fatUnmount(0);
 		WII_LaunchTitleWithArgs(0x0001000248414241L, 0, "/error?error=DOL_OPEN_FAILED", NULL);
 	}
+
+	/*
+	* Attempt to read target DOL into buffer, launch Wii Shop with error code in
+	* case of failure.
+	*/
 
 	fseek(exeFile, 0, SEEK_END);
 	exeSize = ftell(exeFile);
@@ -96,6 +120,11 @@ int main(int argc, char *argv[])
 		fatUnmount(0);
 		WII_LaunchTitleWithArgs(0x0001000248414241L, 0, "/error?error=DOL_SIZE_FAILED", NULL);
 	}
+
+	/*
+	* Close file handler, unmount FAT (SD card) file system, reload + launch
+	* DOL in buffer
+	*/
 
 	fclose(exeFile);
 
