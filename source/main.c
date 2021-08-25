@@ -31,7 +31,7 @@
  * 3. This notice may not be removed or altered from any source
  * distribution.
  ***************************************************************************/
- 
+
 #include <gccore.h>
 #include <malloc.h>
 #include <stdio.h>
@@ -118,7 +118,7 @@ int main(int argc, char *argv[])
 	if (fread(exeBuffer, 1, exeSize, exeFile) != exeSize) {
 		fclose(exeFile);
 		fatUnmount(0);
-		WII_LaunchTitleWithArgs(0x0001000248414241L, 0, "/error?error=DOL_SIZE_FAILED", NULL);
+		WII_LaunchTitleWithArgs(0x0001000248414241L, 0, "/error?error=DOL_BUFF_FAILED", NULL);
 	}
 
 	/*
