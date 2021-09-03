@@ -1,6 +1,10 @@
 ﻿ /*
  * The notice following this comment block is provided as-is, intact, and
  * unmodified, as is required by the stipulations therein.
+ * 
+ * This code is a significantly modified version of the original, which can be
+ * obtained at https://gbatemp.net/threads/forwarder-with-meta-xml-support.273165/
+ *
  * August 24, 2021
  * -ramblecube
  */
