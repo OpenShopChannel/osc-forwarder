@@ -7,6 +7,11 @@ The forwarder channel for the Open Shop Channel.
 _This forwarder is based on code provided by GBAtemp user [FIX94](https://gbatemp.net/members/fix94.232444/). FIX94 posted [a thread](https://gbatemp.net/threads/forwarder-with-meta-xml-support.273165/) in which they provided the source code for their Configurable USB Loader forwarder channel. Thank you, FIX94!_
 
 ---
+## Installation
+
+You should NOT install this forwarder by itself- other software is needed in order for the Open Shop Channel software suite to function properly.
+
+Visit https://oscwii.org for download links and installation instructions.
 
 ## Purpose
 
