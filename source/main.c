@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
 	* error code in case of failure.
 	*/
 
-	exeFile = fopen("/apps/oscdownload/boot.dol","rb");
+	exeFile = fopen("/openshopchannel/downloader/boot.dol","rb");
 
 	if (exeFile < 0) {
 		fclose(exeFile);

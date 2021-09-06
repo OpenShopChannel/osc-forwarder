@@ -10,7 +10,7 @@ _This forwarder is based on code provided by GBAtemp user [FIX94](https://gbatem
 
 ## Purpose
 
-This application attempts to load and execute `/apps/oscdownload/boot.dol` from the SD card on the user's Wii system. Because this application only loads and executes another application, it is known as a forwarder.
+This application attempts to load and execute `/openshopchannel/downloader/boot.dol` from the SD card on the user's Wii system. Because this application only loads and executes another application, it is known as a forwarder.
 
 If the application fails to set up SD card access, open the target file, or read the target file, it will launch the Wii Shop Channel to the page `/error?error=FAT_INIT_FAILED`, `/error?error=DOL_OPEN_FAILED`, or `/error?error=DOL_BUFF_FAILED`, respectively.
 
