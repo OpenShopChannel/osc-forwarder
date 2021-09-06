@@ -1,0 +1,7 @@
+
+boot.dol
+boot.elf
+build/app_booter.bin.o
+build/boot.elf.map
+build/main.d
+build/main.o
