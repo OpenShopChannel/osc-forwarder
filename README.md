@@ -16,6 +16,8 @@ If the application fails to set up SD card access, open the target file, or read
 
 ## Intended Packaging
 
+This application is automatically installed by the Open Shop Channel patcher software, although WADS are maintained here.
+
 This application is meant to be installed as a [hidden channel](https://wiibrew.org/wiki/Title_database#00010008:_.22Hidden.22_channels), and should be packaged as a [WAD](https://wiibrew.org/wiki/WAD_files). If installed correctly, the channel will take up about 1 megabyte of the system NAND, and will not occupy a channel slot in the System Menu.
 
 An example of a correctly packed WAD is included in the releases section, as well as the unpacked WAD tree with the correct [title metadata](https://wiibrew.org/wiki/Title_metadata) and [ticket](https://wiibrew.org/wiki/Ticket). The example WAD was created with [CustomizeMii](https://sites.google.com/site/completesg/useful-tools/customizemii), and is based off of [SifJar's "Base 1"](https://sites.google.com/site/wiibannerguide/base-wads-2) base WAD.
